@@ -21,28 +21,28 @@ Steps to runs the endpoints are : ---
 
 // Create a Person 
 
-1  curl -H "Content-Type: application/json" -X POST -d '{"name": "musa","surname": "ibb","age": "333","sex": "male","birthday": "1977-08-05","phone": "0835593999","email": "ibro2@gmail.com","contacts": "ibro"}' http://localhost:8080/person
+1 -  curl -H "Content-Type: application/json" -X POST -d '{"name": "musa","surname": "ibb","age": "333","sex": "male","birthday": "1977-08-05","phone": "0835593999","email": "ibro2@gmail.com","contacts": "ibro"}' http://localhost:8080/person
 
 
 // Get all Person
 
-2 curl  -v  http://localhost:8080/person
+2 - curl  -v  http://localhost:8080/person
 
 
 // Save or update Person
 
-3   curl -H "Content-Type: application/json" -X PUT -d '{"name": "kloop","surname": "pulp","age": "90","sex": "male","birthday": "1977-08-05","phone": "0835593999","email": "ibro2@gmail.com","contacts": "ibro"}' http://localhost:8080/person
+3 - curl -H "Content-Type: application/json" -X PUT -d '{"name": "kloop","surname": "pulp","age": "90","sex": "male","birthday": "1977-08-05","phone": "0835593999","email": "ibro2@gmail.com","contacts": "ibro"}' http://localhost:8080/person
  http://localhost:8080/person/1
 
 
 // Delete Person
 
-3 curl -X "DELETE" http://localhost:8080/person/1
+3 - curl -X "DELETE" http://localhost:8080/person/1
 
 
 // Get all Person list Pageable 
 
-4   curl -v  http://localhost:8080/listPageable?page=1&size=5
+4 - curl -v  http://localhost:8080/listPageable?page=1&size=5
 
 
 
