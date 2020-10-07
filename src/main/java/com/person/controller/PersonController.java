@@ -7,13 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
+
+@Validated
 @RestController
 @Log4j2
 public class PersonController {
@@ -64,7 +68,7 @@ public class PersonController {
     // Save Person
     @PostMapping("/person")
     @ResponseStatus(HttpStatus.CREATED)
-    Person newPerson(@RequestBody Person newPerson) {
+    Person newPerson(@Valid @RequestBody Person newPerson) {
         return repository.save(newPerson);
     }
 
@@ -85,7 +89,7 @@ public class PersonController {
      */
     // Save or update Person
     @PutMapping("/person/{id}")
-    Person saveOrUpdate(@RequestBody Person newPerson, @PathVariable Integer id) {
+    Person saveOrUpdate(@Valid @RequestBody Person newPerson, @PathVariable Integer id) {
 
         return repository.findById(id)
                 .map(x -> {
