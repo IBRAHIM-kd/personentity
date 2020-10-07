@@ -4,6 +4,8 @@ Java Springboot framework REST API to expose CRUD operation on a "person" entity
 
 - Apache Maven 3.6.3
 
+- MYSQL Database 
+
 To runs perform below Steps ...... :- 
 
 git clone https://github.com/IBRAHIM-kd/personentity.git
